@@ -1,4 +1,4 @@
-# Onboarding Excercises
+# Onboarding Exercises
 
 ## Instructions
 
@@ -6,24 +6,33 @@
 2. See the 1 issue under "Issues"
 3. Open a PR that fixes the issue, following all the coding + PR best practices
 
-
 ## Frontend
 
 To install dependencies:
+
 ```
 cd frontend
 npm install
 ```
 
+Create a `.env.local` file in the frontend directory with:
+
+```
+NEXT_PUBLIC_SERVER_URL=http://localhost:8000
+```
+
 To run the frontend repo:
+
 ```
 npm run dev
 ```
+
 The webapp should be accessible at http://localhost:3000
 
 ## Backend
 
 To set up the virtual environment:
+
 ```
 cd backend
 python3 -m venv env
@@ -32,6 +41,7 @@ pip3 install -r requirements.txt
 ```
 
 To run the backend repo:
+
 ```
-fastapi dev main.py
+uvicorn main:app --reload
 ```
