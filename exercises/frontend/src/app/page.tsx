@@ -67,19 +67,10 @@ const NameEditor = (props: {
   const { fetchedFirstName, fetchedLastName, onSaveNames } = props;
   const [firstName, setFirstName] = useState<string>(fetchedFirstName || "");
   const [lastName, setLastName] = useState<string>(fetchedLastName || "");
-  const [fullName, setFullName] = useState<string>(
-    `${fetchedFirstName || ""} ${fetchedLastName || ""}`.trim()
-  );
-
-  useEffect(() => {
-    setFirstName(fetchedFirstName || "");
-    setLastName(fetchedLastName || "");
-    setFullName(`${fetchedFirstName || ""} ${fetchedLastName || ""}`.trim());
-  }, [fetchedFirstName, fetchedLastName]);
+  const fullName = `${fetchedFirstName || ""} ${fetchedLastName || ""}`.trim();
 
   const handleSave = () => {
     onSaveNames(firstName, lastName);
-    setFullName(`${firstName} ${lastName}`.trim());
   };
 
   return (
